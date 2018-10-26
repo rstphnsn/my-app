@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Suspense, lazy } from 'react';
 import logo from './logo.svg';
 import './App.css';
+
+const LazyThing = lazy(() => import('./components/Thing'))
 
 class App extends Component {
   render() {
@@ -9,16 +11,11 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
-            Edit <code>src/App.js</code> and save to reload.
+            Hello
           </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+          <Suspense fallback={<div>Loading…</div>}>
+            <LazyThing lazy />
+          </Suspense>
         </header>
       </div>
     );

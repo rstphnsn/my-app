@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Thing component renders without crashing 1`] = `
+<div>
+  Some 
+   thing
+</div>
+`;
+
+exports[`Thing component when \`lazy\` prop is truthy renders without crashing 1`] = `
+<div>
+  Some 
+  lazy
+   thing
+</div>
+`;
